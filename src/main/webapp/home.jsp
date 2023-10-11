@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="static/css/home.css">
 <html>
 <body>
-<jsp:include page="header.html"/>
+<jsp:include page="header.jsp"/>
 <main>
     <article>
         <h1 id="up">Background</h1><hr>

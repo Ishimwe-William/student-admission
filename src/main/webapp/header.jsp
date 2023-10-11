@@ -13,8 +13,19 @@
         <ul>
             <li><a href="home.jsp">Home</a></li>
             <li><a href="index.jsp">Registration</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="signup.jsp">SignUp</a></li>
+            <%
+                if (session != null && session.getAttribute("user") != null) {
+            %>
+            <li><a href="logout">Logout</a></li>
+            <%
+            } else {
+            %>
+            <li><a href="login.jsp">Login</a></li>
+            <%
+                }
+            %>
+            <li><a href="#">More</a></li>
+            <li><a href="#">Search</a></li>
         </ul>
     </nav>
 </header>

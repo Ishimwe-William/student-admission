@@ -6,10 +6,10 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="static/css/index.css">
     <script src="static/js/index.js"></script>
+    <script src="static/js/logoutOnExit.js"></script>
 </head>
 <body>
-<jsp:include page="header.html"/>
-<h1>UNDERGRADUATE APPLICATION FORM</h1>
+<jsp:include page="header.jsp"/>
 <div class="photo-upload">
     <label for="photo" class="photo-label">
         <img id="preview" src="placeholder-image.jpg" alt="Upload a photo">
@@ -17,7 +17,7 @@
     </label>
     <input type="file" id="photo" name="photo" accept="image/*" onchange="previewImage(this)">
 </div>
-<form method="post" action="/submit" id="admissionForm">
+<form method="post" action="/secure/submit" id="admissionForm">
     <fieldset>
         <legend>Personal Details</legend>
         <p>
@@ -128,5 +128,6 @@
     <option value="I live nearby the campus"></option>
 </datalist>
 </div>
+<%@ include file="footer.html" %>
 </body>
 </html>

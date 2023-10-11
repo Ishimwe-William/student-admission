@@ -1,4 +1,4 @@
-package rw.ac.auca.controller.studentadmission;
+package rw.ac.auca.controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -11,7 +11,7 @@ import rw.ac.auca.HibernateUtil;
 import java.io.IOException;
 
 
-@WebServlet(name = "AdmissionServlet", urlPatterns = "/submit")
+@WebServlet(name = "AdmissionServlet", urlPatterns = "/secure/submit")
 public class AdmissionServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         try {
