@@ -4,15 +4,14 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import rw.ac.auca.HibernateUtil;
-import rw.ac.auca.model.Student;
 import rw.ac.auca.model.User;
 
-public class userDao {
+public class UserDao {
     public User createUser(User user){
-        Session session = null;
+        Session ss = null;
         Transaction tr = null;
         try {
-            Session ss = HibernateUtil.getSessionFactory().openSession();
+            ss = HibernateUtil.getSessionFactory().openSession();
             tr = ss.beginTransaction();
             ss.save(user);
             tr.commit();
@@ -25,8 +24,8 @@ public class userDao {
             e.printStackTrace();
             return null;
         } finally {
-            if (session != null) {
-                session.close();
+            if (ss != null) {
+                ss.close();
             }
         }
     }

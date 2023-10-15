@@ -7,13 +7,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import rw.ac.auca.model.User;
-import rw.ac.auca.dao.userDao;
+import rw.ac.auca.dao.UserDao;
 
 import java.io.IOException;
 
 @WebServlet("/signupServlet")
 public class SignUpServlet extends HttpServlet {
-    userDao dao=new userDao();
+    UserDao dao=new UserDao();
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user=userRequest(req);
         User newUser=dao.createUser(user);

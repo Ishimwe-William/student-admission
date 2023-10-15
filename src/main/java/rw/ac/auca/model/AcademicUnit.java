@@ -1,30 +1,31 @@
 package rw.ac.auca.model;
 
 import jakarta.persistence.*;
+import rw.ac.auca.model.EAcademicUnit;
 
 import java.util.UUID;
+import java.util.List;
 
+@Entity
 public class AcademicUnit {
     @Id
     private UUID id;
+    @Column(unique = true)
     private String code;
     private String name;
+
     @Enumerated(EnumType.STRING)
-    @Column(name="UNIT")
     private EAcademicUnit unit;
+
     @ManyToOne
-    @JoinColumn(name="PARENT_ID")
+    @JoinColumn
     private AcademicUnit parent;
 
+    @OneToMany(mappedBy = "parent")
+    private List<AcademicUnit> children;
+
     public AcademicUnit() {
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
+        this.id=UUID.randomUUID();
     }
 
     public String getCode() {
@@ -57,5 +58,13 @@ public class AcademicUnit {
 
     public void setParent(AcademicUnit parent) {
         this.parent = parent;
+    }
+
+    public List<AcademicUnit> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<AcademicUnit> children) {
+        this.children = children;
     }
 }

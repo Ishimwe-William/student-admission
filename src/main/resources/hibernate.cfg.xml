@@ -8,9 +8,7 @@
         <property name="hibernate.connection.password">mysql</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="rw.ac.auca.model.Student"/>
-        <mapping class="rw.ac.auca.model.EAcademicUnit"/>
         <mapping class="rw.ac.auca.model.AcademicUnit"/>
-        <mapping class="rw.ac.auca.model.EQualification"/>
         <mapping class="rw.ac.auca.model.Semester"/>
         <mapping class="rw.ac.auca.model.CourseDefinition"/>
         <mapping class="rw.ac.auca.model.StudentCourse"/>

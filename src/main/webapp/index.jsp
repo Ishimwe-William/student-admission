@@ -10,6 +10,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
+<br/>
 <div class="photo-upload">
     <label for="photo" class="photo-label">
         <img id="preview" src="placeholder-image.jpg" alt="Upload a photo">
@@ -17,6 +18,7 @@
     </label>
     <input type="file" id="photo" name="photo" accept="image/*" onchange="previewImage(this)">
 </div>
+<a href="/admin/semesterServlet">Test</a>
 <form method="post" action="/secure/submit" id="admissionForm">
     <fieldset>
         <legend>Personal Details</legend>
